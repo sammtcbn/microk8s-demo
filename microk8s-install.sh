@@ -1,5 +1,5 @@
 #!/bin/bash
-mkdir ~/.kube
+mkdir -p ~/.kube
 #sudo snap install microk8s --classic --channel=1.21
 #sudo snap install microk8s --classic --channel=1.22/stable
 sudo snap install microk8s --classic
@@ -10,6 +10,7 @@ sudo chown -f -R $USER ~/.kube
 sudo snap alias microk8s.kubectl kubectl
 sudo snap alias microk8s.helm3 helm
 
+echo microk8s enable storage dns helm3
 sudo microk8s enable storage dns helm3
 #sudo microk8s enable ingress
 #sudo microk8s enable dashboard
@@ -17,25 +18,33 @@ sudo microk8s enable storage dns helm3
 #sudo microk8s enable portainer
 # portainer default por is 30777 , default user is admin
 
+echo microk8s status --wait-ready
 sudo microk8s status --wait-ready
+echo
 
-echo sudo microk8s status
+echo microk8s status
 sudo microk8s status
+echo
 
-echo sudo kubectl version
+echo kubectl version
 sudo kubectl version
+echo
 
-echo sudo helm version
+echo helm version
 sudo helm version
+echo
 
-echo sudo kubectl get nodes
+echo kubectl get nodes
 sudo kubectl get nodes
+echo
 
-echo sudo kubectl get pod -A
+echo kubectl get pod -A
 sudo kubectl get pod -A
+echo
 
-echo sudo kubectl get services -A
+echo kubectl get services -A
 sudo kubectl get services -A
+echo
 
 # reload the user groups
 newgrp microk8s
