@@ -10,31 +10,32 @@ sudo chown -f -R $USER ~/.kube
 sudo snap alias microk8s.kubectl kubectl
 sudo snap alias microk8s.helm3 helm
 
-newgrp microk8s
+sudo microk8s enable storage dns helm3
+#sudo microk8s enable ingress
+#sudo microk8s enable dashboard
 
-microk8s enable storage dns helm3
-#microk8s enable ingress
-#microk8s enable dashboard
-
-#microk8s enable portainer
+#sudo microk8s enable portainer
 # portainer default por is 30777 , default user is admin
 
-microk8s status --wait-ready
+sudo microk8s status --wait-ready
 
-echo microk8s status
-microk8s status
+echo sudo microk8s status
+sudo microk8s status
 
-echo kubectl version
-kubectl version
+echo sudo kubectl version
+sudo kubectl version
 
-echo helm version
-helm version
+echo sudo helm version
+sudo helm version
 
-echo kubectl get nodes
-kubectl get nodes
+echo sudo kubectl get nodes
+sudo kubectl get nodes
 
-echo kubectl get pod -A
-kubectl get pod -A
+echo sudo kubectl get pod -A
+sudo kubectl get pod -A
 
-echo kubectl get services -A
-kubectl get services -A
+echo sudo kubectl get services -A
+sudo kubectl get services -A
+
+# reload the user groups
+newgrp microk8s
