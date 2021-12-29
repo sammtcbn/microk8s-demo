@@ -1,6 +1,7 @@
 #!/bin/bash
 mkdir ~/.kube
 #sudo snap install microk8s --classic --channel=1.21
+#sudo snap install microk8s --classic --channel=1.22/stable
 sudo snap install microk8s --classic
 sudo usermod -a -G microk8s $USER
 sudo chown -f -R $USER ~/.kube
@@ -23,6 +24,12 @@ sudo snap alias microk8s.helm3 helm
 
 echo microk8s status
 microk8s status
+
+echo kubectl version
+kubectl version
+
+echo helm version
+helm version
 
 echo kubectl get nodes
 kubectl get nodes
