@@ -22,33 +22,5 @@ echo microk8s status --wait-ready
 sudo microk8s status --wait-ready
 echo
 
-echo microk8s status
-sudo microk8s status
-echo
-
-echo kubectl version
-sudo kubectl version
-echo
-
-echo helm version
-sudo helm version
-echo
-
-echo kubectl get nodes
-sudo kubectl get nodes
-echo
-
-echo kubectl get pod -A
-sudo kubectl get pod -A
-echo
-
-echo kubectl get services -A
-sudo kubectl get services -A
-echo
-
-echo kubectl get all --all-namespaces
-sudo kubectl get all --all-namespaces
-echo
-
 # reload the user groups
 newgrp microk8s
