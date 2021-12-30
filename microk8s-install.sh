@@ -46,5 +46,9 @@ echo kubectl get services -A
 sudo kubectl get services -A
 echo
 
+echo kubectl get all --all-namespaces
+sudo kubectl get all --all-namespaces
+echo
+
 # reload the user groups
 newgrp microk8s
