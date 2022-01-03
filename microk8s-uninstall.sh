@@ -4,7 +4,8 @@ sudo microk8s.disable storage dns helm3
 
 sudo snap disable microk8s
 
-sudo snap remove microk8s
+#sudo snap remove microk8s
+sudo snap remove --purge microk8s
 
 rm -rf ~/.kube
 
