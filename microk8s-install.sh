@@ -9,6 +9,7 @@ sudo chown -f -R $USER ~/.kube
 #echo "alias kubectl='microk8s kubectl'" >> ~/.bash_aliases
 sudo snap alias microk8s.kubectl kubectl
 sudo snap alias microk8s.helm3 helm
+sudo snap alias microk8s.ctr ctr
 
 echo microk8s enable storage dns helm3
 sudo microk8s enable storage dns helm3
