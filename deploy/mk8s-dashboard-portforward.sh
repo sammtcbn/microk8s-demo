@@ -1,7 +1,10 @@
 #!/bin/bash
 ME=$(basename $0)
 
+namespace=kube-system
+servicename=kubernetes-dashboard
 internalport=443
+externalport=10443
 
 function usage() {
     echo "Usage: ${ME} [ip] [port]"
@@ -9,17 +12,22 @@ function usage() {
 }
 
 if [ -z "${1}" ]; then
-    usage
+   ip=0.0.0.0
+else
+   ip=${1}
 fi
 
-ip=${1}
-
 if [ -z "${2}" ]; then
-   port=10443
+   port=${externalport}
 else
    port=${2}	
 fi
 
-echo connect dashboard via https://${ip}:${port}
-echo kubectl port-forward -n kube-system service/kubernetes-dashboard --address=${ip} ${port}:${internalport}
-kubectl port-forward -n kube-system service/kubernetes-dashboard --address=${ip} ${port}:${internalport
+if [ -z "${1}" ]; then
+    echo connect via http://your_ip:${port}
+else
+    echo connect via http://${ip}:${port}
+fi
+
+echo kubectl port-forward -n ${namespace} service/${servicename} --address=${ip} ${port}:${internalport}
+kubectl port-forward -n ${namespace} service/${servicename} --address=${ip} ${port}:${internalport}

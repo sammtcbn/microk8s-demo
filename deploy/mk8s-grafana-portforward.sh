@@ -2,9 +2,9 @@
 ME=$(basename $0)
 
 namespace=monitoring
-servicename=prometheus-k8s
-internalport=9090
-externalport=19090
+servicename=grafana
+internalport=3000
+externalport=13000
 
 function usage() {
     echo "Usage: ${ME} [ip] [port]"
