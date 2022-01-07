@@ -1,2 +1,2 @@
 #!/bin/bash
-sudo microk8s.disable dashboard
+microk8s.disable dashboard
