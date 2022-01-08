@@ -17,9 +17,6 @@ sudo microk8s enable storage dns helm3
 #sudo microk8s enable dashboard
 #sudo microk8s enable registry
 
-#sudo microk8s enable portainer
-# portainer default por is 30777 , default user is admin
-
 echo microk8s status --wait-ready
 sudo microk8s status --wait-ready
 echo

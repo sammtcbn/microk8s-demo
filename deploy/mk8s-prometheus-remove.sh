@@ -1,2 +1,2 @@
 #!/bin/bash
-microk8s.disable prometheus
+microk8s disable prometheus

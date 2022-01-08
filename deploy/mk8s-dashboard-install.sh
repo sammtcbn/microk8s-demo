@@ -1,2 +1,2 @@
 #!/bin/bash
-microk8s.enable dashboard
+microk8s enable dashboard
