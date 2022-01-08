@@ -1,6 +1,6 @@
 #!/bin/bash
 #microk8s.disable dashboard ingress
-sudo microk8s.disable storage dns helm3
+sudo microk8s disable storage dns helm3
 sudo microk8s reset
 sudo microk8s stop
 

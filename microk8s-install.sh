@@ -14,7 +14,6 @@ sudo snap alias microk8s.ctr ctr
 echo microk8s enable storage dns helm3
 sudo microk8s enable storage dns helm3
 #sudo microk8s enable ingress
-#sudo microk8s enable dashboard
 #sudo microk8s enable registry
 
 echo microk8s status --wait-ready
