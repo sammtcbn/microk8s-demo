@@ -49,7 +49,9 @@ print_green "kubectl create deployment nginx --image=nginx:latest"
 kubectl create deployment nginx --image=nginx:latest
 echo
 
-sleep 5
+print_green "kubectl wait --for=condition=ready pod -l app=nginx"
+kubectl wait --for=condition=ready pod -l app=nginx
+echo
 
 print_green "kubectl get pods -A"
 kubectl get pods -A
