@@ -12,5 +12,5 @@ kubectl delete ingress dashboard -n kube-system
 echo
 
 print_green "microk8s disable dashboard ingress"
-microk8s disable dashboard ingress
+microk8s disable dashboard ingress metrics-server
 echo

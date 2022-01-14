@@ -26,6 +26,27 @@ echo
 
 sleep 3
 
+print_green "kubectl wait deploy/metrics-server --for condition=available --timeout=600s -n kube-system"
+kubectl wait deploy/metrics-server --for condition=available --timeout=600s -n kube-system
+echo
+
+print_green "kubectl wait deploy/kubernetes-dashboard --for condition=available --timeout=600s -n kube-system"
+kubectl wait deploy/kubernetes-dashboard --for condition=available --timeout=600s -n kube-system
+echo
+
+ingctrl_podname=$(kubectl get pod -A | grep nginx-ingress-microk8s-controller | awk '{print $2}')
+echo ingress controller pod name is ${ingctrl_podname}
+
+print_green "kubectl wait --for=condition=Ready pod/${ingctrl_podname} -n ingress"
+kubectl wait --for=condition=Ready pod/${ingctrl_podname} -n ingress
+echo
+
+sleep 3
+
 print_green "kubectl get ingress -A"
 kubectl get ingress -A
+echo
+
+print_green "curl -k https://dashboard-${myip}.nip.io/"
+curl -k https://dashboard-${myip}.nip.io/
 echo
