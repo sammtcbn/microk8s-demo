@@ -24,8 +24,10 @@ print_green "kubectl wait deploy/echoserver --for condition=available --timeout=
 kubectl wait deploy/echoserver --for condition=available --timeout=600s
 echo
 
-print_green "kubectl expose deployment echoserver --type=NodePort --port=8080"
-kubectl expose deployment echoserver --type=NodePort --port=8080
+#print_green "kubectl expose deployment echoserver --type=NodePort --port=8080"
+#kubectl expose deployment echoserver --type=NodePort --port=8080
+print_green "kubectl expose deployment echoserver --port=8080"
+kubectl expose deployment echoserver --port=8080
 echo
 
 print_green "microk8s enable ingress"
