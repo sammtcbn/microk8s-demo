@@ -1,6 +1,7 @@
 #!/bin/bash
 sudo snap unalias kubectl
 sudo snap unalias helm
+sudo snap unalias ctr
 
 #microk8s.disable dashboard ingress
 sudo microk8s disable storage dns helm3
